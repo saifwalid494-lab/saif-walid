@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة الألعاب الإلكترونية</title>
+    <link rel="stylesheet" href="style.CSS">
+</head>
+<body>
+
+    <header class="header">
+        <h1>🎮 منصة الألعاب الإلكترونية</h1>
+        <p>استمتع بتشكيلة متنوعة من الألعاب التفاعلية المباشرة</p>
+    </header>
+
+    <div class="controls-container">
+        <input type="text" id="searchInput" class="search-box" placeholder="بحث عن لعبة..." oninput="filterGames()">
+        
+        <div class="categories">
+            <button class="cat-btn active" onclick="filterCategory('all', event)">الكل</button>
+            <button class="cat-btn" onclick="filterCategory('arcade', event)">آركيد</button>
+            <button class="cat-btn" onclick="filterCategory('puzzle', event)">ذكاء وألغاز</button>
+        </div>
+    </div>
+
+    <main class="games-grid" id="gamesGrid"></main>
+
+    <!-- Modal اللعبة -->
+    <div id="gameModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">عنوان اللعبة</h2>
+                <button class="close-btn" onclick="closeGame()">&times;</button>
+            </div>
+            <div id="gameContainer" class="game-container"></div>
+        </div>
+    </div>
+
+    <script src="script.JS"></script>
+</body>
+</html>
